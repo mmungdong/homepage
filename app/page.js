@@ -1,7 +1,7 @@
 'use client';
 import Header from '@/components/Header';
 import CategoryNavigator from '@/components/CategoryNavigator';
-import { AlistHost } from '@/constants/host';
+import { AlistHost } from '@/constants/hosts';
 
 const HOME_LINK_CATEGORIES = {
   common: {

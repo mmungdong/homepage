@@ -1,8 +1,8 @@
 'use client';
 import Header from '@/components/Header';
 import CategoryNavigator from '@/components/CategoryNavigator';
+import { AlistHost } from '@/constants/hosts';
 
-// 定义代码页的链接分类
 const CODE_LINK_CATEGORIES = {
   cloud_native: {
     title: '云原生',
@@ -47,18 +47,18 @@ const CODE_LINK_CATEGORIES = {
         title: 'JavaScript',
         links: [
           {
-            name: 'JavaScript高级系列',
-            url: 'https://juejin.cn/column/7403629671684177955',
-            iconName: 'code',
-            color: 'yellow-500',
-            description: 'XiaoYu2002的专栏(掘金)'
-          },
-          {
             name: 'MDN JavaScript',
             url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
             iconName: 'language',
             color: 'blue-500',
             description: 'MDN JavaScript文档'
+          },
+          {
+            name: 'JavaScript高级系列',
+            url: 'https://juejin.cn/column/7403629671684177955',
+            iconName: 'code',
+            color: 'yellow-500',
+            description: 'XiaoYu2002的专栏(掘金)'
           }
         ]
       },
@@ -71,6 +71,20 @@ const CODE_LINK_CATEGORIES = {
             iconName: 'widgets',
             color: 'blue-600',
             description: 'React官方文档'
+          },
+          {
+            name: 'React笔记',
+            url: 'https://www.yuque.com/mungdong/blog/ll3azmvrmhbegm0a',
+            iconName: 'widgets',
+            color: 'blue-600',
+            description: 'React学习笔记'
+          },
+          {
+            name: 'Nextjs学习资料',
+            url: 'https://juejin.cn/book/7307859898316881957',
+            iconName: 'widgets',
+            color: 'blue-600',
+            description: 'Nextjs学习资料'
           }
         ]
       }
@@ -111,6 +125,35 @@ const CODE_LINK_CATEGORIES = {
         ]
       }
     ]
+  },
+  ai: {
+    title: 'AI',
+    subCategories: [
+      {
+        title: '大模型',
+        links: [
+          {
+            name: '学习资料',
+            url: `${AlistHost}/学习/AI%20&%20大模型/大模型`,
+            iconName: 'code',
+            color: 'blue-500',
+            description: '大模型学习资料'
+          }
+        ]
+      },
+      {
+        title: 'RAG',
+        links: [
+          {
+            name: '学习资料',
+            url: `${AlistHost}/学习/AI%20&%20大模型/RAG`,
+            iconName: 'code',
+            color: 'blue-500',
+            description: 'RAG学习资料'
+          }
+        ]
+      },
+    ],
   },
   interview: {
     title: '面试',
