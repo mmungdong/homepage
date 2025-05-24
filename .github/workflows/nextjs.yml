@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: 
+      - 'README.md'
+      - 'LICENSE'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify License
+        run: |
+          if [ ! -f 'LICENSE' ]; then
+            echo "缺少图片中配置的Apache许可证文件"
+            exit 1
+          fi
+          grep -q 'Apache License' LICENSE
+
+      - name: Cache pnpm modules
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.pnpm-store
+            node_modules
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      
+      - run: echo ">>>>> start build"
+      - run: pnpm build
+
+      - name: Archive production code
+        uses: actions/upload-artifact@v3
+        with:
+          name: nextjs-build
+          path: |
+            .next
+            public
+            package.json
+            LICENSE
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: nextjs-build
+
+      - name: Check build output
+        run: |
+          [ -d .next ] || exit 1
+          grep -q 'Apache License' LICENSE
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: homepage
+          directory: .
