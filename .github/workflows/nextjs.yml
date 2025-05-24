@@ -44,24 +44,3 @@ jobs:
             public
             package.json
             LICENSE
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v3
-        with:
-          name: nextjs-build
-
-      - name: Check build output
-        run: |
-          [ -d .next ] || exit 1
-          grep -q 'Apache License' LICENSE
-
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: homepage
-          directory: .
