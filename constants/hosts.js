@@ -1,3 +1,3 @@
-import { getEnvVar } from "../utils/envUtils";
-
-export const AlistHost = getEnvVar(process.env.NEXT_PUBLIC_CF_ALIST_HOST)
+export const AlistHost = process.env.NEXT_PUBLIC_CF_ALIST_HOST
+  ? process.env.NEXT_PUBLIC_CF_ALIST_HOST.replace(/\/$/, '')
+  : '';
