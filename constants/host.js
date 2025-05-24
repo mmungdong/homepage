@@ -1,0 +1,1 @@
+export const AlistHost = 'http://47.110.246.112:2000'
