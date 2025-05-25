@@ -52,7 +52,7 @@ const HOME_LINK_CATEGORIES = {
     title: 'Alist',
     subCategories: [
       {
-        title: '武林外传',
+        title: '影视资源',
         links: [
           {
             name: '武林外传',
@@ -60,12 +60,7 @@ const HOME_LINK_CATEGORIES = {
             iconName: 'movie',
             color: 'green-500',
             description: '武林外传'
-          }
-        ]
-      },
-      {
-        title: '影视资源',
-        links: [
+          },
           {
             name: '影视资源',
             url: `${AlistHost}/%E7%94%B5%E8%A7%86%E5%89%A7`,
