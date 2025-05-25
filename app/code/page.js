@@ -1,5 +1,4 @@
 'use client';
-import Header from '@/components/Header';
 import CategoryNavigator from '@/components/CategoryNavigator';
 import { AlistHost } from '@/constants/hosts';
 
@@ -189,7 +188,6 @@ const CODE_LINK_CATEGORIES = {
 export default function CodePage() {
   return (
     <div className="min-h-screen">
-      <Header />
       <CategoryNavigator categories={CODE_LINK_CATEGORIES} />
     </div>
   );

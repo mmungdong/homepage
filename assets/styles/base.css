@@ -4,9 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --text-color: #333;
+  --bg-color: #fff;
+  --card-bg: #f9f9f9;
+}
+
+.dark {
+  --text-color: #e6e6e6;
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+}
+
 @layer base {
   body {
-    @apply bg-white text-gray-900;
+    color: var(--text-color);
+    background-color: var(--bg-color);
   }
 
   a {
@@ -16,4 +29,19 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold;
   }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
 }

@@ -1,4 +1,8 @@
 import '../assets/styles/base.css';
+import ThemeScript from '@/scripts/theme-script';
+import ThemeProvider from '@/components/ThemeProvider';
+import ThemeApply from '@/components/ThemeApply';
+import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export default function RootLayout({ children }) {
@@ -6,14 +10,19 @@ export default function RootLayout({ children }) {
     <html lang="zh-CN">
       <head>
         <title>Yang FanBin</title>
-        <meta name="description" content="网站描述" />
-        <link rel="icon" href="../public/favicon.ico" />
+        <meta name="description" content="技术导航网站" />
+        <link rel="icon" href="/favicon.ico" />
+        <ThemeScript />
       </head>
-      <body className="bg-white text-gray-900">
-        <main className="max-w-4xl mx-auto px-6 py-8">
-          {children}
-        </main>
-        <Footer />
+      <body className="font-sans antialiased transition-colors duration-300">
+        <ThemeProvider>
+          <ThemeApply />
+          <Header />
+          <main className="max-w-4xl mx-auto px-6 py-8 min-h-screen">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

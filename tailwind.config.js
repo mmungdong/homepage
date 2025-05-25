@@ -5,16 +5,18 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      colors: {
-        primary: '#1a1a1a',
-        secondary: '#f4f4f4',
+      extend: {
+        animation: {
+          'fade-in': 'fadeIn 0.5s ease-in-out',
+        },
+        keyframes: {
+          fadeIn: {
+            from: { opacity: '0' },
+            to: { opacity: '1' },
+          },
+        },
       },
-      fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        heading: ['Inter', 'sans-serif'],
-      },
-    },
   },
+  darkMode: 'class',
   plugins: [],
 }
