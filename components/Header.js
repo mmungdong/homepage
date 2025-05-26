@@ -33,39 +33,6 @@ export default function Header() {
             </h1>
           </div>
 
-          {/* 中间 Tab */}
-          <nav className="flex flex-1 justify-center ml-8">
-            <div className="flex space-x-6 items-center">
-              <a
-                href="/"
-                className={`flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200 ${
-                  currentPath === '/' ? 'text-blue-500 dark:text-blue-400 font-medium' : ''
-                }`}
-              >
-                <span className="material-icons-outlined mr-1">home</span>
-                <span>首页</span>
-              </a>
-              <a
-                href="/code"
-                className={`flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200 ${
-                  currentPath === '/code' ? 'text-blue-500 dark:text-blue-400 font-medium' : ''
-                }`}
-              >
-                <span className="material-icons-outlined mr-1">code</span>
-                <span>Code</span>
-              </a>
-              <a
-                href="/about"
-                className={`flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-200 ${
-                  currentPath === '/about' ? 'text-blue-500 dark:text-blue-400 font-medium' : ''
-                }`}
-              >
-                <span className="material-icons-outlined mr-1">person</span>
-                <span>关于</span>
-              </a>
-            </div>
-          </nav>
-
           {/* 右侧主题切换 */}
           <div className="ml-auto">
             <ThemeToggle />

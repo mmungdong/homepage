@@ -27,7 +27,6 @@ export default function CategoryNavigator({ categories }) {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
       <main className="max-w-4xl mx-auto px-6 py-12">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-4">技术导航</h1>
           <div className="flex space-x-4 overflow-x-auto border-b border-gray-200 dark:border-gray-700">
             {Object.keys(categories).map((category) => {
               const isActive = category === selectedMainCategory;
