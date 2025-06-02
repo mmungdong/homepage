@@ -11,7 +11,7 @@ const HOME_LINK_CATEGORIES = {
         links: [
           {
             name: 'BT之家1Lou站',
-            url: 'https://www.1lou.one/view/img/favicon.ico',
+            url: 'https://www.1lou.one',
             description: '资源站点'
           },
           {
@@ -35,9 +35,24 @@ const HOME_LINK_CATEGORIES = {
         title: '常用工具',
         links: [
           {
+            name: 'blog',
+            url: 'https://blog.yangfanbin.cn/',
+            description: 'yangfanbin的个人博客',
+          },
+          {
             name: 'cloudflare',
             url: 'https://dash.cloudflare.com/',
             description: '部署平台'
+          },
+          {
+            name: 'Vercel',
+            url: 'https://vercel.com',
+            description: '部署平台'
+          },
+          {
+            name: 'apifox - webhook',
+            url: 'https://app.apifox.com/project/6494696',
+            description: 'webhook部署接口'
           },
           {
             name: 'Google',
@@ -50,16 +65,6 @@ const HOME_LINK_CATEGORIES = {
             name: 'GitHub',
             url: 'https://github.com',
             description: '代码托管平台'
-          },
-          {
-            name: 'Vercel',
-            url: 'https://vercel.com',
-            description: '部署平台'
-          },
-          {
-            name: 'Figma',
-            url: 'https://www.figma.com',
-            description: 'UI设计工具'
           }
         ]
       }
